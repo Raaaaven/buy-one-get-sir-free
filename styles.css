@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.facess {
+    margin: 0%;
+    padding: 10px;
+}
+
+.face {
+    width: 15vw; /* 15% of viewport width */
+    max-width: 100px; /* optional max size */
+    min-width: 100px;  /* optional min size */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+}
+.face-1 {
+  animation: popMove 3s forwards, wobble 1s infinite 3s;
+}
+
+@keyframes popMove {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  25%  { transform: translate(-50%, -50%) scale(3); }
+  75%  { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(20vw, 5vh) scale(1); } /* responsive */
+}
+
+@keyframes wobble {
+  0%   { transform: translate(20vw, 5vh) rotate(5deg); }
+  50%  { transform: translate(20vw, 5vh) rotate(-5deg); }
+  100% { transform: translate(20vw, 5vh) rotate(5deg); }
+}
+
+.face-2 {
+  animation: popMove-2 3s forwards, wobble-2 1s infinite 3s;
+}
+
+@keyframes popMove-2 {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  25%  { transform: translate(-50%, -50%) scale(3); }
+  75%  { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-30vw, -32vh) scale(1); }
+}
+
+@keyframes wobble-2 {
+  0%   { transform: translate(-30vw, -32vh) rotate(5deg); }
+  50%  { transform: translate(-30vw, -32vh) rotate(-5deg); }
+  100% { transform: translate(-30vw, -32vh) rotate(5deg); }
+}
+
+.hero {
+    display: none;
+    padding: 20px;
+}
+.hero img {
+    width: 15vw; /* 15% of viewport width */
+    max-width: 100px; /* optional max size */
+    min-width: 100px;  /* optional min size */
+    animation: wobbleee 1s infinite 3s;
+}
+.hero .face11 {
+    margin-top: 20vh;
+    margin-left: 20vw;
+}
+.hero .face22 {
+    margin-left: 70vw;
+}
+
+@keyframes wobbleee {
+  0%   { transform: rotate(5deg); }
+  50%  { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+.hero h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 600px) {
+    .hero .face11 {
+        margin-left: 2vw;
+    }
+    @keyframes popMove-2 {
+        0%   { transform: translate(-50%, -50%) scale(1); }
+        25%  { transform: translate(-50%, -50%) scale(3); }
+        75%  { transform: translate(-50%, -50%) scale(1); }
+        100% { transform: translate(-34vw, -25vh) scale(1); }
+    }
+}
